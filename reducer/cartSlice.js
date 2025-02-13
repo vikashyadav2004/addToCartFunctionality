@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 export const counterSlice = createSlice({
   name: "counterSlice",
   initialState: {
-    value: [],
+    value: JSON.parse(localStorage.getItem("cartProducts")) ? JSON.parse(localStorage.getItem("cartProducts")):[],
   },
   reducers: {
     addValue: (state, action) => {

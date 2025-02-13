@@ -1,5 +1,6 @@
 "use client"
 import { Decrease, Delete, Increase } from '@/reducer/cartSlice';
+import Link from 'next/link';
 import React from 'react'
 import { ImBin } from 'react-icons/im';
 import { useDispatch, useSelector } from 'react-redux'; 
@@ -8,6 +9,12 @@ const Cart = () => {
     const Cart = useSelector((state) => state.cart.value);    
     // const Cart =  JSON.parse(localStorage.getItem("cartProduct")) || []   
     const dispatch = useDispatch() 
+    if (Cart.length<=0) {
+      return <div>
+        <p>Cart is Empty</p>
+        <Link href={"/products"}>Keep Expolre</Link>
+      </div>
+    }
   return (
     Cart?.map((item, index) => {
         return (

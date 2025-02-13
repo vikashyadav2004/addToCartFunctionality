@@ -17,8 +17,7 @@ const Products = () => {
   const isProductInCart = (productId) => {
     return CartItem.find((item) => item.id === productId);
   };
-  console.log(data);
-  
+  console.log(CartItem);
   return (
     <div>
        <div className="grid md:grid-cols-4 sm:grid-cols-2 gap-x-5 gap-y-20 mx-5">
